@@ -6,8 +6,8 @@ from .api import SoundbarApi
 from homeassistant.components.media_player import (
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
+    MediaPlayerDeviceClass,
     PLATFORM_SCHEMA,
-    DEVICE_CLASS_SPEAKER,
 )
 from homeassistant.const import (
     CONF_NAME, CONF_API_KEY, CONF_DEVICE_ID
@@ -103,7 +103,7 @@ class SmartThingsSoundbarMediaPlayer(MediaPlayerEntity):
 
     @property
     def device_class(self):
-        return DEVICE_CLASS_SPEAKER
+        return MediaPlayerDeviceClass.SPEAKER
 
     @property
     def supported_features(self):
